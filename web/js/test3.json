@@ -1,0 +1,44 @@
+
+{ "current_generation":0,
+  "current_experiment":0,
+  "round":0,
+  "combinations":[[0, 1], [0, 2], [0, 3], [0, 4], [1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]],
+  "population": [
+  {
+  "chromosome": [
+      {"gene": "seed", "value": 1},
+      {"gene": "pieces", "value": 1}
+    ],
+  "fitness":0
+  },
+  {
+  "chromosome": [
+      {"gene": "seed", "value": 2},
+      {"gene": "pieces", "value": 2}
+    ],
+  "fitness":0
+  },
+  {
+  "chromosome": [
+      {"gene": "seed", "value": 3},
+      {"gene": "pieces", "value": 3}
+    ],
+  "fitness":0
+  },
+  {
+  "chromosome": [
+      {"gene": "seed", "value": 4},
+      {"gene": "pieces", "value": 4}
+    ],
+  "fitness":0
+  },
+  {
+  "chromosome": [
+      {"gene": "seed", "value": 5},
+      {"gene": "pieces", "value": 5}
+    ],
+  "fitness":0
+  }
+
+]
+}

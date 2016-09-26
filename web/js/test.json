@@ -1,0 +1,16 @@
+{
+"generations":{
+  "one":{
+    "population":{"aj34"},
+    "fitness":{2}
+  }
+
+}
+
+"individuals":{
+  "aj34":{
+    "chromosome":{3,4}
+  }
+}
+
+}
