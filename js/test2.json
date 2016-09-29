@@ -1,0 +1,25 @@
+
+{ "current_generation":1,
+  "individuals": [
+  {
+  "chromosome": [
+      {"gene": "altezza", "value": "1"},
+      {"gene": "numbers", "value": "2"}
+    ]
+  },
+  {
+  "chromosome": [
+      {"gene": "altezza", "value": "3"},
+      {"gene": "numbers", "value": "4"}
+    ]
+  }
+],
+"generations":[
+  {
+  "individuals": [0,1]
+  },
+  {
+  "individuals": [0,1]
+  }
+]
+}
