@@ -38,14 +38,14 @@ var test = snapshot.val();
 population_size = test.population.length;
 population = test.population;
 round = test.round;
-generation = test.current_generation;
-experiment = test.current_experiment;
+generation = test.generation;
+experiment = test.experiment;
 combinations = test.combinations;
 experiment_size = combinations.length;
 console.log(test);
 console.log(combinations[experiment]);
 console.log("population size:"+population_size);
-console.log("experiment size:"+experiment_size)
+console.log("experiment size:"+experiment_size);
 index_left=combinations[experiment][0];
 index_right=combinations[experiment][1];
 individual_left = population[index_left];
@@ -91,36 +91,7 @@ var left_canvas = document.getElementById('left_canvas');
 var right_canvas = document.getElementById('right_canvas');
 left_canvas.addEventListener("click", test1, false);
 right_canvas.addEventListener("click", test2, false);
-/*
-function test1(){
-    alert("left_canvas");
-    firebase.database().ref('values/').push({
-      vasalue: "left_canvas"
-    });
-}
 
-function test2(){
-    alert("right_canvas");
-    firebase.database().ref('values/').push({
-      vasalue: "right_canvas"
-    });
-}
-
-
-function test1(){
-    alert("left_canvas");
-    firebase.database().ref('individuals/1/').update({
-      fitness: 200
-    });
-}
-
-function test2(){
-    alert("right_canvas");
-    firebase.database().ref('values/').push({
-      vasalue: "right_canvas"
-    });
-}
-*/
 
 function test1(){
     //alert("left_canvas, age: "+age+" gender: "+gender);
@@ -137,11 +108,11 @@ function test1(){
     }
 
     firebase.database().ref().update({
-      current_experiment:experiment
+      experiment:experiment
     });
 
     firebase.database().ref('population/'+index_left+'/').update({
-      fitness:individual_left.fitness+1
+      positive_feedback:individual_left.positive_feedback+1
     });
     window.location.reload(false);
 
@@ -162,11 +133,11 @@ function test2(){
     }
 
     firebase.database().ref().update({
-      current_experiment:experiment
+      experiment:experiment
     });
 
     firebase.database().ref('population/'+index_right+'/').update({
-      fitness:individual_right.fitness+1
+      positive_feedback:individual_right.positive_feedback+1
     });
 
     window.location.reload(false);
@@ -252,8 +223,24 @@ var render1 = Render.create({
 /////////////////
 //var chromosome =[nume_elem, seed]
 var top = 0;
-Common._seed = individual_left.chromosome.seed;
-var bridge = Composites.stack(150, top, individual_left.chromosome.pieces, 1, 10, 10, function(x, y) {
+var elements = 0;
+var active_chromosome=[];
+
+for (var i = 2; i < individual_left.chromosome.length; i=i+3) {
+    console.log(i+"-->"+individual_left.chromosome[i]);
+    if (individual_left.chromosome[i]===1){
+      elements++;
+      active_chromosome.push(individual_left.chromosome[i-2]);
+      active_chromosome.push(individual_left.chromosome[i-1]);
+    }
+}
+
+console.log("Active Chriomosome -->"+active_chromosome);
+//var elements = individual_left.chromosome.length/2;
+
+console.log("elements -->"+elements);
+
+var bridge = Composites.stack(150, top, elements, 1, 10, 10, function(x, y, i) {
          // return Bodies.rectangle(x, y, 50, 20, { collisionFilter: { group: group } });
 /*
 
@@ -261,7 +248,11 @@ Matter.Bodies.polygon(x, y, sides, radius, [options]) → Body
 Creates a new rigid body model with a regular polygon hull with the given number of sides. The options parameter is an object that specifies any properties you wish to override the defaults. See the properties section of the Matter.Body module for detailed information on what you can pass via the options object.
 
 */
-        return Bodies.polygon(x, y, Math.round(Common.random(1, 8)), Common.random(20, 40));
+        // console.log("hello "+i);
+        console.log(active_chromosome[2*i]+" "+active_chromosome[2*i+1])
+        return Bodies.polygon(x, y, active_chromosome[2*i], active_chromosome[2*i+1]);
+
+
      });
 
 Composites.chain(bridge, 0.5, 0, -0.5, 0, { stiffness: 0.9 });
@@ -270,10 +261,29 @@ Composites.chain(bridge, 0.5, 0, -0.5, 0, { stiffness: 0.9 });
 // individual 2//
 /////////////////
 //var chromosome =[nume_elem, seed]
-Common._seed = individual_right.chromosome.seed;
-var bridge1 = Composites.stack(150, top, individual_right.chromosome.pieces, 1, 10, 10, function(x, y) {
+
+var active_chromosome=[];
+var elements = 0;
+
+for (var i = 2; i < individual_right.chromosome.length; i=i+3) {
+    console.log("right "+i+"-->"+individual_right.chromosome[i]);
+    if (individual_right.chromosome[i]===1){
+      elements++;
+      active_chromosome.push(individual_right.chromosome[i-2]);
+      active_chromosome.push(individual_right.chromosome[i-1]);
+    }
+}
+
+console.log("Active Chriomosome -->"+active_chromosome);
+//var elements = individual_left.chromosome.length/2;
+
+console.log("elements -->"+elements);
+
+var bridge1 = Composites.stack(150, top, elements, 1, 10, 10, function(x, y, i) {
          // return Bodies.rectangle(x, y, 50, 20, { collisionFilter: { group: group } });
-         return Bodies.polygon(x, y, Math.round(Common.random(1, 8)), Common.random(20, 40));
+         // return Bodies.polygon(x, y, Math.round(Common.random(1, 8)), Common.random(20, 40));
+         console.log(active_chromosome[2*i]+" xxxx <<<<"+active_chromosome[2*i+1])
+         return Bodies.polygon(x, y, active_chromosome[2*i], active_chromosome[2*i+1]);
      });
 
 Composites.chain(bridge1, 0.5, 0, -0.5, 0, { stiffness: 0.9 });

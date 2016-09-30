@@ -253,7 +253,7 @@ var render1 = Render.create({
 //var chromosome =[nume_elem, seed]
 var top = 0;
 Common._seed = individual_left.chromosome.seed;
-var bridge = Composites.stack(150, top, individual_left.chromosome.pieces, 1, 10, 10, function(x, y) {
+var bridge = Composites.stack(150, top, individual_left.chromosome.pieces, 1, 10, 10, function(x, y, i) {
          // return Bodies.rectangle(x, y, 50, 20, { collisionFilter: { group: group } });
 /*
 
@@ -261,6 +261,7 @@ Matter.Bodies.polygon(x, y, sides, radius, [options]) → Body
 Creates a new rigid body model with a regular polygon hull with the given number of sides. The options parameter is an object that specifies any properties you wish to override the defaults. See the properties section of the Matter.Body module for detailed information on what you can pass via the options object.
 
 */
+        console.log("hello "+i);
         return Bodies.polygon(x, y, Math.round(Common.random(1, 8)), Common.random(20, 40));
      });
 
