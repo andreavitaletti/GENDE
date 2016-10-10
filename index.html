@@ -6,7 +6,7 @@
 
 
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Bootstrap Theme Company Page</title>
+  <title>GENDE @ MFR2016</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,10 +14,6 @@
   <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script>
-    var age = null;
-    var gender = null;
-  </script>
   <style>
   /*
   canvas {
@@ -226,16 +222,23 @@ canvas {
      <div id="a" class="col-md-12">
        <h1>GENDE: GENetic DEsign</h1>
        <!--
+       <h2>Partecipa alla progettazione degli orecchini genetici di Makerfaire</h2>
+-->
+       <h2>"Solo i migliori orecchini sopravviveranno ai feedback degli utenti... ed evolveranno generazione dopo generazione. Ne resteranno solo pochi!"</h2>
+
+
+       <!--
        <p>GENDE is a tool for Algorithmic Aided Design based on the unique combination of Genetic Algorithms, Generative Design and Partecipative Design on Social Networks. "Only the best individuals will survive to users' feedback… and evolve generation after generation."</p>
-     -->
+
        <form class="form-inline">
          <input type="email" class="form-control" size="50" placeholder="Email Address" required>
          <button type="button" class="btn btn-danger">Subscribe</button>
       </form><br>
+         -->
      </div>
    </div>
 </div>
-
+<!--
   <div class="container">
      <div  class="row">
 
@@ -253,37 +256,50 @@ canvas {
 
      </div>
   </div>
-
-  <div class="container bg-grey">
+-->
+  <div class="container text-center ">
     <div  class="row">
-
+<h2>Informazioni opzionali, ma per noi molto utili :-)</h2>
       <div id="a" class="col-md-6">
-        <p><b>Optional info</b></p>
-          <p><b>Sesso/Gender:</b></p>
-        <form>
- <label class="radio-inline">
-   <input type="radio" name="optradio" value="male"  onchange="getValue(this.value)">Male
- </label>
- <label class="radio-inline">
-   <input type="radio" name="optradio" value="female" onchange="getValue(this.value)">Female
- </label>
- <label class="radio-inline">
-   <input type="radio" name="optradio" value="other" onchange="getValue(this.value)">Other
- </label>
-</form>
+
+        <form name="myForm">
+<b>E-mail:</b>
+<input type="input" name="email" id="email11" style="width: 300px;">
+</form><br>
+
+          <form name="gender">
+            <b>Sesso: </b>
+              <label class="radio-inline">
+                  <input type="radio" name="optradio" value="male"  onchange="getValue(this.value)">Male
+              </label>
+              <label class="radio-inline">
+                  <input type="radio" name="optradio" value="female" onchange="getValue(this.value)">Female
+              </label>
+              <label class="radio-inline">
+                  <input type="radio" name="optradio" value="other" onchange="getValue(this.value)">Other
+              </label>
+          </form>
 
         <script type="text/javascript">
         function getValue(newValue)
         {
-          console.log(newValue);
+        //console.log(newValue);
          gender = newValue;
         }
         </script>
       </div>
       <div id="b" class="col-md-6">
-<p><b>Informazioni Opzionali </b></p>
-      <p><b>Età/Age:  <span id="range">0</span></b></p>
+<!--
+      <p><b>Età/Age:
+
+        <span id="range">0</span></b></p>
         <input id="age" type="range" min="0" max="100" value="0" onchange="showValue(this.value)" />
+-->
+
+        <form name="age">
+          <b>Età:</b>
+          <input type="number" name="age" min="0" max="100" step="1">
+        </form>
 
         <script type="text/javascript">
         function showValue(newValue)
@@ -305,26 +321,25 @@ canvas {
 <script src="js/myscript_asynch_new_1.js"></script>
 <style>
 canvas {
-		    background-color: blue;
+		    background-color: black;
 		    width: 50%;
 		    height: auto;
 		}
 </style>
 
-<div class="container  text-center">
-    <p id="info"></p>
-   <div  class="row">
+<div class="container  text-center bg-grey">
 
+   <div  class="row">
+<h2> Per favore clicca sugli orecchini che preferisci </h2>
      <div id="exp" class="col-md-6">
-       <p >Please, click on the earings you like more. </p>
-         <canvas id="left_canvas" width="150">Sorry, your browser doesn't support the &lt;canvas&gt; element.</canvas>
+         <canvas id="left_canvas" width="150" style="border:1px solid #000000;">Sorry, your browser doesn't support the &lt;canvas&gt; element.</canvas>
      </div>
      <div id="exp1" class="col-md-6">
-       <p >Per favore, clicca su gli orecchini che più gradisci.</p>
-         <canvas id="right_canvas" width="150">Sorry, your browser doesn't support the &lt;canvas&gt; element.</canvas>
+         <canvas id="right_canvas" width="150" style="border:1px solid #000000;">Sorry, your browser doesn't support the &lt;canvas&gt; element.</canvas>
      </div>
+     <br>
 
-
+<p id="info"></p>
    </div>
 </div>
 

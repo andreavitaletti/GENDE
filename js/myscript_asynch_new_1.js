@@ -95,8 +95,21 @@ right_canvas.addEventListener("click", test2, false);
 
 function test1(){
     //alert("left_canvas, age: "+age+" gender: "+gender);
-    alert("Grazie di aver partecipato. \n\n Thank you for your participation");
-      if (experiment === experiment_size - 1){
+    //var myElement = document.getElementById("email11");
+    var email = document.forms["myForm"]["email"].value;
+    var age = document.forms["age"]["age"].value;
+    var gender = document.forms["gender"]["optradio"].value;
+    alert("Grazie di aver partecipato. Seguici su http://www.gende.it");
+    if (age!=="" || email!="" || gender!="") {
+      alert("scrivo");
+    firebase.database().ref('users/').push({
+        email:email,
+        age:age,
+        gender:gender,
+        individual:[generation,experiment,round,index_left]
+      });
+    }
+    if (experiment === experiment_size - 1){
       experiment = 0;
       round=round+1;
       firebase.database().ref().update({
@@ -120,7 +133,22 @@ function test1(){
 
 function test2(){
     //alert("right_canvas, age: "+age+" gender: "+gender);
-    alert("Grazie di aver partecipato. \n\n Thank you for your participation.");
+    var email = document.forms["myForm"]["email"].value;
+    var age = document.forms["age"]["age"].value;
+    var gender = document.forms["gender"]["optradio"].value;
+    alert("Grazie di aver partecipato. Seguici su http://www.gende.it");
+    if (age!=="" || email!="" || gender!="") {
+      alert("scrivo");
+    firebase.database().ref('users/').push({
+        email:email,
+        age:age,
+        gender:gender,
+        individual:[generation,experiment,round,index_right]
+      });
+    }
+
+
+
     if (experiment === experiment_size - 1){
       experiment = 0;
       round=round+1;
