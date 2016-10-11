@@ -101,7 +101,7 @@ function test1(){
     var gender = document.forms["gender"]["optradio"].value;
     alert("Grazie di aver partecipato. Seguici su http://www.gende.it");
     if (age!=="" || email!="" || gender!="") {
-      alert("scrivo");
+      //alert("scrivo");
     firebase.database().ref('users/').push({
         email:email,
         age:age,
@@ -138,7 +138,7 @@ function test2(){
     var gender = document.forms["gender"]["optradio"].value;
     alert("Grazie di aver partecipato. Seguici su http://www.gende.it");
     if (age!=="" || email!="" || gender!="") {
-      alert("scrivo");
+      //alert("scrivo");
     firebase.database().ref('users/').push({
         email:email,
         age:age,
