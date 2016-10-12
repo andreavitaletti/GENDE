@@ -19,46 +19,26 @@
 
 
 function getData(callback){
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAxaiPOZxePv9dluQAesWhoKob9e_PZjEo",
-    authDomain: "gende-9e642.firebaseapp.com",
-    databaseURL: "https://gende-9e642.firebaseio.com",
-    storageBucket: "",
+
+generation = 1;
+experiment = 1;
+round = 3;
+
+// get data on the population for a DB and select two individuals
+
+individual_left = {
+    "chromosome" : [ 9, 33, 0, 9, 38, 0, 4, 28, 0, 7, 2, 0, 5, 38, 0, 8, 20, 1, 8, 5, 1, 6, 17, 1 ],
+    "positive_feedback" : 12
   };
-  firebase.initializeApp(config);
+individual_right = {
+    "chromosome" : [ 6, 12, 1, 8, 3, 1, 5, 40, 1, 2, 40, 1, 8, 28, 0, 8, 17, 1, 7, 35, 1, 9, 33, 0 ],
+    "positive_feedback" : 3
+  };
 
-  // Get a reference to the database service
-  var database = firebase.database();
-  var rootRef = firebase.database().ref();
-  // Attach an asynchronous callback to read the data at our posts reference
-//rootRef.on("value", function(snapshot) {
-rootRef.once("value", function(snapshot) {
-var test = snapshot.val();
-population_size = test.population.length;
-population = test.population;
-round = test.round;
-generation = test.generation;
-experiment = test.experiment;
-combinations = test.combinations;
-experiment_size = combinations.length;
-console.log(test);
-console.log(combinations[experiment]);
-console.log("population size:"+population_size);
-console.log("experiment size:"+experiment_size);
-index_left=combinations[experiment][0];
-index_right=combinations[experiment][1];
-individual_left = population[index_left];
-individual_right = population[index_right];
-console.log("left:"+individual_left);
-console.log("right"+individual_right);
-console.log("got data");
+
 document.getElementById("info").innerHTML = "<h2> Generation "+generation+" - Experiment "+experiment+" - Round "+round+"</h2>";
-callback();
-}, function (errorObject) {
-console.log("The read failed: " + errorObject.code);
-});
 
+callback();
 
 
 }
@@ -94,81 +74,14 @@ right_canvas.addEventListener("click", test2, false);
 
 
 function test1(){
-    //alert("left_canvas, age: "+age+" gender: "+gender);
-    //var myElement = document.getElementById("email11");
-    var email = document.forms["myForm"]["email"].value;
-    var age = document.forms["age"]["age"].value;
-    var gender = document.forms["gender"]["optradio"].value;
-    alert("Grazie di aver partecipato. Seguici su http://www.gende.it");
-    if (age!=="" || email!="" || gender!="") {
-      //alert("scrivo");
-    firebase.database().ref('users/').push({
-        email:email,
-        age:age,
-        gender:gender,
-        individual:[generation,experiment,round,index_left]
-      });
-    }
-    if (experiment === experiment_size - 1){
-      experiment = 0;
-      round=round+1;
-      firebase.database().ref().update({
-        round:round
-      });
-    }
-    else {
-      experiment = experiment+1;
-    }
-
-    firebase.database().ref().update({
-      experiment:experiment
-    });
-
-    firebase.database().ref('population/'+index_left+'/').update({
-      positive_feedback:individual_left.positive_feedback+1
-    });
+    alert("write data on the feedback in the DB")
     window.location.reload(false);
 
 }
 
 function test2(){
-    //alert("right_canvas, age: "+age+" gender: "+gender);
-    var email = document.forms["myForm"]["email"].value;
-    var age = document.forms["age"]["age"].value;
-    var gender = document.forms["gender"]["optradio"].value;
-    alert("Grazie di aver partecipato. Seguici su http://www.gende.it");
-    if (age!=="" || email!="" || gender!="") {
-      //alert("scrivo");
-    firebase.database().ref('users/').push({
-        email:email,
-        age:age,
-        gender:gender,
-        individual:[generation,experiment,round,index_right]
-      });
-    }
-
-
-
-    if (experiment === experiment_size - 1){
-      experiment = 0;
-      round=round+1;
-      firebase.database().ref().update({
-        round:round
-      });
-    }
-    else {
-      experiment = experiment+1;
-    }
-
-    firebase.database().ref().update({
-      experiment:experiment
-    });
-
-    firebase.database().ref('population/'+index_right+'/').update({
-      positive_feedback:individual_right.positive_feedback+1
-    });
-
-    window.location.reload(false);
+  alert("write data on the feedback in the DB")
+  window.location.reload(false);
 }
 
 
