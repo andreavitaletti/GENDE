@@ -8,10 +8,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>body { margin: 0px; } .embed-container { position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%; min-height: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-    
-    
-    
+	<style>body { margin: 0px; } .embed-container { position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%; min-height: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  </style>
+
+
+
 
     <title>Creative - Start Bootstrap Theme</title>
 
@@ -36,7 +37,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Lu Manicu Meo</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">GENDE</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -46,11 +47,13 @@
               <a class="nav-link js-scroll-trigger" href="#about">Chi</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Servizi</a>
+              <a class="nav-link js-scroll-trigger" href="#services">Cosa</a>
             </li>
+            <!--
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
             </li>
+          -->
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contatti</a>
             </li>
@@ -62,25 +65,18 @@
     <header class="masthead">
       <div class="header-content">
         <div class="header-content-inner">
-          <h1 id="homeHeading" style="margin-top: 20%">GENDE</h1>
+          <h1 id="homeHeading" style="margin-top: 20%">GENDE: GENetic DEsign</h1>
           <hr>
-          <!--
-			<div class='embed-container'><iframe src='http://localhost:3000' style='border:0; ba'></iframe></div>
         </div>
-        -->
-        <!-- 16:9 aspect ratio 
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src='http://localhost:3000'></iframe>
-</div>
+         <div class="embed-responsive-item">
+           <iframe id="mainIFrame" class="embed-responsive embed-responsive-4by3" src='http://localhost:3000' frameborder=0></iframe>
+         </div>
+          <p>In questo esperimento vogliamo progettare un vaso che evolva in base ai feedback forniti dagli utenti. Come in natura sopravvivoono gli animali più adtti, qui sopravvivono i vasi più adatti, cioè quelli che sono
+            più graditi agli utenti.</p>
+          <p>Puoi cambiare il verso di rotazione col mouse. Quando decidi qul'è il vaso che più ti piace, clicca sul bottono MI PIACE! corrispondente. Grazie.</p>
+         <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Per saperne di più</a>
 
--->
 
-<!-- 4:3 aspect ratio -->
-<div class="embed-responsive-item">
-  <iframe id="mainIFrame" class="embed-responsive embed-responsive-4by3" src='http://localhost:3000' frameborder=0></iframe>
-</div>  
-        
-        
       </div>
     </header>
 
@@ -90,13 +86,32 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading text-white">Chi siamo</h2>
             <hr class="light">
+            <!--
             <p class="text-faded">Siamo un gruppo di artigiani, capaci di produrre pezzi unici fatti a mano da qualunque materiale. In un mondo in cui la produzione di massa la fa da padrone, crediamo ci sia ancora sapzio per lo sfizio di un oggetto unico che valorizzi i vostri ricordi.</p>
-            <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Come funziona?</a>
+          -->
           </div>
         </div>
+<div class="row">
+        <div class="col">
+      <img src="img/andrea.jpg" class="img-responsive, img-thumbnail" alt="Cinque Terre">
+    </div>
+    <div class="col">
+      <p class="text-faded"> Andrea </p>
+    </div>
+        </div>
+</br>
+        <div class="row">
+                <div class="col">
+              <img src="img/sara.jpg" class="img-responsive, img-thumbnail" alt="Cinque Terre">
+            </div>
+            <div class="col">
+              <p class="text-faded"> Sara </p>
+            </div>
+                </div>
+
       </div>
     </section>
- 
+
     <section id="services">
       <div class="container">
         <div class="row">
@@ -110,37 +125,43 @@
         <div class="row">
 			         <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box">
+              <i class="fa fa-4x fa-play text-primary sr-icons"></i>
+              <h3>Inizializzazione</h3>
+              <p class="text-muted">I principali elementi di un vaso sono codificati in un genoma digitale e viene generata una popolazione iniziale di vasi randomica</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
               <i class="fa fa-4x fa-thumbs-o-up text-primary sr-icons"></i>
-              <h3>Confrontiamoci</h3>
-              <p class="text-muted">Per capire la fattibilità del progetto</p>
+              <h3>Selezione</h3>
+              <p class="text-muted">Agli utenti viene chiesto di selezionare i vasi che più gli piacciono. Come in natura sopravvivono gli elementi più adatti, nel mondo digitale sopravvivono i vasi che più piacciono agli utenti </p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box">
-              <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-              <h3>Seleziona un manico</h3>
-              <p class="text-muted">Seleziona la forma di manico che più ti piace tra le nostre proposte.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box">
-              <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-              <h3>Inviaci il materiale</h3>
-              <p class="text-muted">Inviaci un materiale che per te è importante: il corno di un animale, la radice di un albero o qualunque altra cosa ti ricordi qualcosa o qualcuno di speciale.</p>
-            </div>
-          </div>
- 
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box">
               <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-              <h3>Fatto con amore</h3>
-              <p class="text-muted">Riceverai un pezzo unico, lavorato artigianalmente e che rispetti e valorizzi il tuo ricordo.</p>
+              <h3>Evoluzione</h3>
+              <p class="text-muted">I vasi che sopravvivono si accoppiano generando nuovi vasi - una nuova generazione - che eredita il patrimonio genetico dei genitori, eventualmente mutato</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-refresh text-primary sr-icons"></i>
+              <h3>Iterazione</h3>
+              <p class="text-muted">Il processo itera generazione dopo generazione, alternando fasi di selezione ed evoluzione, finchè non si giunge alla generazione finale. Il miglior vaso di questa generazione verrà stampato in 3D </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
+
+
+
+
+
+    </section>
+<!--
     <section class="p-0" id="portfolio">
       <div class="container-fluid">
         <div class="row no-gutter popup-gallery">
@@ -201,7 +222,7 @@
                     Project Name
                   </div>
                 </div>
-              </div>
+              </div>pronto per realizzare un progetto insieme... non aspettiamo altro!
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
@@ -237,7 +258,7 @@
         </div>
       </div>
     </section>
-
+-->
 
     <section id="contact">
       <div class="container">
@@ -245,7 +266,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Contatti</h2>
             <hr class="primary">
-            <p>Sei pronto per realizzare un progetto insieme... non aspettiamo altro! </p>
+            <p>Sei vuoi contattarci per ulteriori informazioni ... </p>
           </div>
         </div>
         <div class="row">
@@ -256,7 +277,10 @@
           <div class="col-lg-4 mr-auto text-center">
             <i class="fa fa-envelope-o fa-3x sr-contact"></i>
             <p>
+              <!--
               <a href="mailto:your-email@your-domain.com">gianni@io.it</a>
+              -->
+              vitaletti_at_diag_dot_uniroma1_dot_it
             </p>
           </div>
         </div>

@@ -69,8 +69,8 @@
 				margin-top: 0.5em;
 			}
 		</style>
-		
-		
+
+
 	</head>
 	<body>
 
@@ -79,13 +79,13 @@
 		<div id="content">
 			<!--
 			<div id="info"><a href="http://threejs.org" target="_blank">three.js</a> - multiple elements - webgl</div>
-			-->	
+			-->
 		</div>
 
 <!--
 		<script src="js/three.js"></script>
 		<script src="js/STLLoader.js"></script>
-	-->	
+	-->
 
 
 		<script src="js/three.js"></script>
@@ -93,11 +93,11 @@
 		<script src="js/loaders/STLLoader.js"></script>
 
 		<script src="js/Detector.js"></script>
-		
+
 				<script src="js/controls/OrbitControls.js"></script>
-		
-		
-		
+
+
+
 		<script id="template" type="notjs">
 			<div class="scene"></div>
 			<div class="description"><center>
@@ -115,11 +115,11 @@
 			var geometries = [];
 			var UUID = [];
 			var O3d = new THREE.Object3D;
-			
+
 
 
 var index = 0;
-var files = ['./models/print_dim.stl','./models/print_dim.stl','./models/print_dim.stl','./models/print_dim.stl'];
+var files = ['./models/model3.stl','./models/print_dim.stl','./models/print_dim.stl','./models/print_dim.stl'];
 
 var objLoader = new THREE.STLLoader();
 
@@ -146,9 +146,9 @@ function loadNextFile() {
 loadNextFile();
 
 
-			
-			
-			
+
+
+
 
 			function init() {
 
@@ -156,11 +156,11 @@ loadNextFile();
 
 				var template = document.getElementById( "template" ).text;
 				var content = document.getElementById( "content" );
-				
+
 				for ( var i =  0; i < geometries.length; i ++ ) {
-					
+
 					var scene = new THREE.Scene();
-					
+
 					// make a list item
 					var element = document.createElement( "div" );
 					element.className = "list-item";
@@ -181,11 +181,11 @@ loadNextFile();
 					controls.enablePan = false;
 					controls.enableZoom = false;
 					scene.userData.controls = controls;
-	
-					
+
+
 					var geometry = geometries[i];
-					
-					
+
+
 
 					var material = new THREE.MeshStandardMaterial( {
 
@@ -195,7 +195,7 @@ loadNextFile();
 						shading: THREE.FlatShading
 
 					} );
-					
+
 					var Mesh = new THREE.Mesh( geometry, material );
 
 					console.log(Mesh)
