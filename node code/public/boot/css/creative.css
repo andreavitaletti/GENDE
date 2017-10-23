@@ -43,6 +43,9 @@ p {
 .bg-primary {
   background-color: #F05F40 !important; }
 
+.bg-white {
+  background-color: #FFFFFF !important; }
+
 .bg-dark {
   color: white;
   background-color: #222222 !important; }
@@ -260,27 +263,28 @@ header.masthead {
   padding-left: 0; }
 
 .btn-default {
-  color: #222222;
+  color: white;
   border-color: white;
-  background-color: white; }
+  background-color: #F05F40;
+  text-decoration: none !important }
   .btn-default.focus, .btn-default:focus {
-    color: #222222;
+    color: white;
     border-color: #bfbfbf;
     background-color: #e6e6e6; }
   .btn-default:hover {
-    color: #222222;
+    color: white;
     border-color: #e0e0e0;
     background-color: #e6e6e6; }
   .btn-default.active, .btn-default:active,
   .open > .btn-default.dropdown-toggle {
-    color: #222222;
+    color: white;
     border-color: #e0e0e0;
     background-color: #e6e6e6; }
     .btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover,
     .open > .btn-default.dropdown-toggle.focus,
     .open > .btn-default.dropdown-toggle:focus,
     .open > .btn-default.dropdown-toggle:hover {
-      color: #222222;
+      color: white;
       border-color: #bfbfbf;
       background-color: #d4d4d4; }
   .btn-default.active, .btn-default:active,
