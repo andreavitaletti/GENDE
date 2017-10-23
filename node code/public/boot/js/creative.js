@@ -70,8 +70,8 @@
 
 })(jQuery); // End of use strict
 
+
 const iframe = document.getElementById('mainIFrame');
-const infoContainer = document.getElementById('infoContainer');
 const sceneWidth = 250;
 const sceneHeight = 260;
 const handleChange = function(){
@@ -82,15 +82,14 @@ const handleChange = function(){
 
   console.log(ratio);
 
-  if ( ratio >= 4){
+  if ( ratio >= 4.2){
     iframe.height = 400;
-    infoContainer.style.marginTop = 0;
-  } else if ( ratio >= 2 ){
+  } else if ( ratio >= 3){
+    iframe.height = 700;
+  } else if ( ratio >= 1.6 ){
     iframe.height = 800;
-    infoContainer.style.marginTop = 400;
-  } else if ( ratio < 2 ){
+  } else if ( ratio < 1.6 ){
     iframe.height = 1200;
-    infoContainer.style.marginTop = 800;
   }
 }
 
