@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .main.container
+    // register form
+    p Grazie di aver partecipato. <br>
+    p  Se vuoi lasciaci queste informazioni. Ci aiuteranno a capire meglio come il vaso evolve in relazione alle vostre scelte. <br>
+    p  Se ci lasci anche la mail ti faremo sapere le novità ... con discrezione ;-) <br>
+    form(method='POST' action='/register')
+      div.form-group
+        label(for='email') Email:
+        input#email.form-control(type='email', placeholder='name@email.com' name='email')
+      div.form-group
+        label(for='age') Eta':
+        input#age.form-control(type='number', min="1", max="99", placeholder='eta' name='eta')
+      div.form-group
+          input#id.form-control(type='hidden', name='id' value=userid)
+      div.form-group
+        label(for='gender') Sesso:
+        input#gender.form-control(type='radio', value="maschio" placeholder='maschio' name='optradio')
+        | Maschio
+        input#gender.form-control(type='radio', value="femmina" placeholder='femmina' name='optradio')
+        | Femmmina
+      button.btn.btn-primary(type='submit') Invia

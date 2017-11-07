@@ -67,65 +67,72 @@
         <div class="header-content-inner" >
           <div class="col-lg-8 mx-auto text-center">
           <h1 id="homeHeading" style="color: white; margin-top: 10%;"><b>GENDE: GENetic DEsign</b></h1>
-          <hr>
+          <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Per saperne di più</a>
         </div>
 
       </div>
     </section>
 
     <section class="bg-white" style="padding-top: 0%; padding-bottom: 3%">
-      <div class="container text-center">
-
+      <div class="container text-center" id="mystuff">
+<!--
         <h5 class="col-lg-8 mx-auto text-center" style="padding-top: 3%; padding-bottom: 0%; color: #555555"><b>
         Puoi cambiare il verso di rotazione col mouse. Quando decidi qual'è il vaso che più ti piace, clicca sul bottone MI PIACE! corrispondente. </b></h5>
 
         <iframe id="mainIFrame" class="embed-responsive embed-responsive-4by3" src='http://localhost:3000' frameborder=0 style="margin-top: 0%"></iframe>
+-->
+<script>
+var $_GET = {};
 
-        <h5 class="col-lg-8 mx-auto text-center">In questo esperimento vogliamo progettare un vaso che evolva in base ai feedback forniti dagli utenti. Come in natura sopravvivono gli animali più adatti, qui sopravvivono i vasi più adatti, cioè quelli che sono più graditi agli utenti.</h5>
+document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
 
-        <br><br>
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+});
 
-        <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Per saperne di più</a>
+// alert($_GET['inst']);
+/*
+var iframe = document.createElement('iframe');
+iframe.setAttribute("id", "mainIFrame");
+iframe.setAttribute("class", "embed-responsive embed-responsive-4by3");
+iframe.setAttribute("src", "http://localhost:3000?inst="+$_GET['inst']);
+iframe.setAttribute("frameborder", "0");
+iframe.setAttribute("style", "margin-top: 0%");
+document.getElementById("mystuff").appendChild(iframe);
+*/
+var command = '<iframe id="mainIFrame" class="embed-responsive embed-responsive-4by3" src="http://localhost:3000/showandselect.html?inst=' + $_GET["inst"] + '" frameborder=0 style="margin-top: 0%"></iframe>';
+document.write(command);
+
+</script>
       </div>
 
 
-    </section> 
+    </section>
 
-    <section class="bg-primary">
+    <section class="bg-primary" id="about">
       <div class="col-lg-8 mx-auto text-center">
         <h2 class="section-heading text-white">Chi siamo</h2>
         <hr class="light">
       </div>
-
-<!--
-    <div class="container" style="text-align: center; margin: auto">
-      <div class="row" style="text-r">
-        <img src="img/andrea.jpg" class="img-responsive, img-thumbnail" alt="Cinque Terre" style="border-radius:50%; object-fit: cover; object-position: center; overflow: hidden; height: 200px; width: 200px;"><br>
-        <p>Andrea</p>
-
-        <img src="img/sara.jpg" class="img-responsive, img-thumbnail" alt="Cinque Terre" style="border-radius:50%; object-fit: cover; object-position: center; overflow: hidden; height: 200px; width: 200px;"><br>
-        <p>Sara</p>
-      </div>
-    </div>
-    -->
 
     <div class="container" style="text-align: center; margin: auto">
     <div class="row">
       <div class="col-sm-6" style="max-width: 100%">
         <img src="img/andrea.jpg" class="img-responsive, img-thumbnail" alt="Cinque Terre" style="border-radius:50%; width: 250px; height: 250px; object-fit: cover; overflow: hidden;">
         <p class="text-faded" style="text-align: center;"> Andrea </p>
-      </div>    
-            
-            
+      </div>
+
+
       <div class="col-sm-6">
         <img src="img/sara.jpg" class="img-responsive, img-thumbnail" alt="Cinque Terre" style="border-radius: 50%; width: 250px; height: 250px; object-fit: cover; overflow: hidden;">
         <p class="text-faded" style="text-align: center;"> Sara </p>
       </div>
-
     </div>
     </div>
 
-    
+
     </section>
 
     <section id="services">
@@ -138,6 +145,7 @@
         </div>
       </div>
       <div class="container">
+        In questo esperimento vogliamo progettare un vaso che evolva in base ai feedback forniti dagli utenti. Come in natura sopravvivono gli animali più adatti, qui sopravvivono i vasi più adatti, cioè quelli che sono più graditi agli utenti.
         <div class="row">
 			         <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box">
@@ -170,8 +178,19 @@
           </div>
         </div>
       </div>
+<br>
+
+      <div class="container" style="text-align: center; margin: auto">
+      <div class="row">
+        <div class="col-sm-12" style="max-width: 100%">
+          <img src="img/explanation.jpg"" class="img-responsive, img-thumbnail" alt="IMG" style="border-radius:0%; width: 500px; height: 500px; object-fit: cover; overflow: hidden;">
+          <p class="text-faded" style="text-align: center;"> Andrea </p>
+        </div>
 
 
+
+      </div>
+      </div>
 
 
 

@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+	head
+		title three.js webgl - multiple elements
+		meta(charset="utf-8")
+		link(href="vendor/bootstrap/css/bootstrap.min.css", rel="stylesheet")
+		link(href="../boot/css/creative.css", rel="stylesheet")
+		style.
+			* {
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			}
+			body {
+			color: #000;
+			font-family:Monospace;
+			font-size:13px;
+			background-color: transparent;
+			margin: 0px;
+			}
+			#content {
+			position: absolute;
+			top: 0px; width: 100%;
+			z-index: 1;
+			padding: 3em 0 0 0;
+			text-align: center;
+			}
+	body
+		#content
+			| Grazie di aver partecipato.
+			br
+			| 		Se vuoi lasciaci queste informazioni. Ci aiuteranno a capire meglio come il vaso evolve in relazione alle vostre scelte.
+			br
+			| 		Se ci lasci anche la mail ti faremo sapere le novità ... con discrezione ;-)
+			br
+			br
+			form(method='POST' action='/register')
+				.form-group
+					label.radio-inline
+						input(type="radio", name="gender", value="maschio")
+						| Maschio
+					label.radio-inline
+						input(type="radio", name="gender", value="femmina")
+						| Femmina
+				br
+				.form-group.col-md-4
+					| Età (tra 1 e 99):
+					input(type="number", name="age", min="1", max="99")
+				br
+				.form-group
+					label(for="email") Email address:
+					input#email.form-control(type="email", name="email")
+				.form-group
+					input(type="hidden", name='id', value=userid)
+				.form-group
+					input(type="hidden", name='generation', value=generation)
+				.form-group
+					input(type="hidden", name='choice', value=choice)  
+				br
+				button.btn.btn-default.btn-xl(type="submit") Invio
+				button.btn.btn-default.btn-xl(type="button", onclick="window.location.href='http://localhost:3000/show_items'") Cancel
